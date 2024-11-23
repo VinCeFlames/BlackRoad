@@ -1,0 +1,632 @@
+/* Global styles */
+
+
+/* index.html */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'THEBOLTFONT';
+  src: url('fonts/THEBOLDFONT 2022.otf') format('opentype'),
+       url('fonts/THEBOLDFONT.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZenDots-Regular';
+  src: url('fonts/ZenDots-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jura';
+  src: url('fonts/Jura-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('fonts/Exo2-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(45deg, black, rgb(207, 169, 0), rgb(138, 138, 4));
+  background-size: 300% 300%;
+  animation: backgroundMove 8s infinite alternate ease-in-out;
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+h1 {
+  color: #f8d300;
+  font-family: 'THEBOLTFONT', sans-serif;
+  font-size: 50px;
+}
+
+h2 {
+  color: #ffffff;
+  font-family: 'ZenDots-Regular', sans-serif;
+  font-size: 19px;
+}
+
+h3{
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #ad9c00;
+  transition: color 0.3s ease;
+}
+
+/* Header */
+header {
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+header h2 {
+  margin-bottom: 3rem;
+}
+
+header nav {
+  font-family: 'Jura';
+  display: flex;
+  justify-content: center;
+  background: #ffffff2c;
+  padding-top: 9px;
+  padding-bottom: 8px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 6rem;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  position: relative;
+}
+
+header nav ul li a {
+  color: #000000;
+  font-weight: bold;
+  position: relative;
+  overflow: visible;
+}
+
+/* Effet de surlignage sous les liens */
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff007f;
+  transition: width 0.5s ease-in-out;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+header nav ul li a:hover {
+  color: #ff007f;
+}
+
+header nav ul li i {
+  font-size: 24px;
+  color: #e4e000;
+  margin-right: 8px; /* Espace entre l'icône et le texte */
+  transition: color 0.5s ease, transform 0.4s ease;
+}
+
+header nav ul li a:hover i {
+  color: #ff007f;
+  transform: scale(1.2);
+}
+
+
+/* Icônes dans les liens */
+i {
+  font-size: 24px;
+  color: #e4e000;
+  transition: color 0.5s ease, transform 0.4s ease; /* Ajout d'une transition harmonieuse */
+}
+
+header nav ul li a:hover i {
+  color: #ff007f; /* Couleur de surlignage */
+  transform: scale(1.2); /* Légère augmentation de taille */
+}
+
+/* Animation spécifique des icônes */
+.fa-flip {
+  animation: flip 2s linear infinite;
+}
+
+.fa-spin {
+  animation: spin 2s linear infinite;
+}
+
+.fa-beat-fade {
+  animation: beat-fade 2s ease-in-out infinite;
+}
+
+/* Keyframes pour l'animation des icônes */
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes beat-fade {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e2a38;
+}
+
+/* Car cards */
+section h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.car-card {
+  display: flex;
+  flex-direction: row; /* Disposer les images en ligne */
+  justify-content: center;
+  padding: 1rem;
+  background-color: #ffffff2c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+/* Style de la première image */
+.car-card img:nth-child(1) {
+  max-width: 100%;
+  height: auto;
+  margin-right: 1rem; /* Espacement entre les images */
+}
+
+/* Conteneur des deux autres images (2 et 3) */
+.car-card .right-images {
+  display: flex;
+  flex-direction: column; /* Empiler les images verticalement */
+  justify-content: space-between;
+  height: 100%; /* Prendre toute la hauteur du conteneur */
+}
+
+/* Style de la deuxième image */
+.car-card .right-images img:nth-child(1) {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem; /* Espacement entre les images */
+}
+
+/* Style de la troisième image */
+.car-card .right-images img:nth-child(2) {
+  max-width: 100%;
+  height: auto;
+}
+
+
+footer {
+  background-color: #ffffff2c;
+  color: #ffffff;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-about, .footer-links, .footer-contact {
+  margin-bottom: 1rem;
+}
+
+.footer-about p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 0.5rem 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ffc107;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.footer-contact i {
+  margin-right: 0.5rem;
+  color: #ffc107;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #eeeeee;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Nos Voitures */
+#cars {
+  width: 80%;
+  margin: 3rem auto;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+#cars h2 {
+  font-family: 'THEBOLTFONT', sans-serif;
+  font-size: 2.5rem;
+  color: #f8d300;
+  margin-bottom: 3rem;
+}
+
+/* Carte de voiture */
+.car-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.car-card img {
+  width: 40%;
+  border-radius: 10px;
+  margin-right: 2rem;
+}
+
+.car-info {
+  text-align: left;
+  color: white;
+}
+
+.car-info h3 {
+  font-size: 2rem;
+  color: #ff007f;
+  margin-bottom: 1rem;
+}
+
+.car-info p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Effet de survol */
+.car-card:hover {
+  transform: translateY(-10px);
+}
+
+
+/* Réservation */
+#reservation {
+  width: 60%;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+}
+
+#reservation h2 {
+  font-family: 'THEBOLTFONT', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f8d300;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-family: 'Jura', sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #000;
+  margin-top: 0.3rem;
+}
+
+button[type="submit"] {
+  background-color: #ff007f;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #f8d300;
+  color: black;
+}
+
+
+/* Tarifs */
+.price-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+  transform: scale(1.05);
+}
+
+.price-card h3 {
+  color: #ffc107;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-card p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+
+/* Expérience */
+#experience {
+  width: 80%;
+  margin: 3rem auto;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+#experience h2 {
+  font-family: 'THEBOLTFONT', sans-serif;
+  font-size: 2rem;
+  color: #f8d300;
+  margin-bottom: 2rem;
+}
+
+/* Témoignages */
+.testimonial {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.testimonial footer {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #ff007f;
+}
+
+/* Galerie */
+.gallery {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 30%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+
+/* Contact */
+#contact {
+  width: 60%;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+}
+
+#contact h2 {
+  font-family: 'THEBOLTFONT', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f8d300;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-family: 'Jura', sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #000;
+  margin-top: 0.3rem;
+}
+
+textarea {
+  resize: none; /* Empêche le redimensionnement */
+}
+
+button[type="submit"] {
+  background-color: #ff007f;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #f8d300;
+  color: black;
+}
